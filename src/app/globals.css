@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.react-flow__node {
+  @apply select-none;
+}
+
+.react-flow__handle {
+  width: 12px !important;
+  height: 12px !important;
+  @apply border-2;
+}
+
+.react-flow__edge-path {
+  stroke-width: 2;
+}
+
+.react-flow__controls {
+  @apply shadow-lg rounded-lg overflow-hidden;
+}
+
+.react-flow__controls-button {
+  @apply border-gray-200 bg-white hover:bg-gray-50;
+}
+
+.react-flow__minimap {
+  @apply rounded-lg overflow-hidden;
+}
+
+.react-flow__attribution {
+  display: none !important;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  @apply bg-gray-50;
+} 
