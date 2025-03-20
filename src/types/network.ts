@@ -1,5 +1,5 @@
-import type { Node, Edge } from 'reactflow';
-import type { User as SupabaseUser } from '@supabase/supabase-js';
+// import type { Node, Edge } from 'reactflow';
+import type { User as SupabaseUser } from "@supabase/supabase-js";
 
 export type RelationshipStrength = 1 | 2 | 3 | 4 | 5;
 
@@ -34,7 +34,7 @@ export interface ContactConnection {
 
 export interface NetworkNode {
   id: string;
-  type: 'user' | 'contact';
+  type: "user" | "contact";
   position: {
     x: number;
     y: number;
@@ -46,7 +46,7 @@ export interface NetworkEdge {
   id: string;
   source: string;
   target: string;
-  type: 'smoothstep' | 'bezier';
+  type: "smoothstep" | "bezier";
   style?: {
     stroke?: string;
     strokeWidth?: number;
@@ -66,4 +66,4 @@ export interface ContactNodeData extends Contact {
   onDelete?: () => void;
   onConnect?: (contact: Contact) => void;
   isConnectable?: boolean;
-} 
+}

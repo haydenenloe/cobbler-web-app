@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import NetworkGraph from '@/components/NetworkGraph';
-import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import NetworkGraph from "@/components/NetworkGraph";
+import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<unknown>(null);
 
   useEffect(() => {
     // Check if user is logged in (using localStorage)
-    const userData = localStorage.getItem('user');
+    const userData = localStorage.getItem("user");
     if (!userData) {
-      router.push('/auth/signin');
+      router.push("/auth/signin");
     } else {
       setUser(JSON.parse(userData));
       setIsLoading(false);
@@ -43,10 +43,12 @@ export default function Home() {
               </h1>
               <div className="flex items-center space-x-4">
                 <div className="text-sm text-gray-600">
-                  <span className="font-medium">User:</span> {user?.username || 'Demo User'}
+                  <span className="font-medium">User:</span>{" "}
+                  {user?.username || "Demo User"}
                 </div>
                 <div className="text-sm text-gray-600">
-                  <span className="font-medium">Email:</span> {user?.email || 'demo@example.com'}
+                  <span className="font-medium">Email:</span>{" "}
+                  {user?.email || "demo@example.com"}
                 </div>
               </div>
             </div>
@@ -54,7 +56,7 @@ export default function Home() {
               <button
                 onClick={() => {
                   // TODO: Implement CSV import
-                  alert('CSV import functionality coming soon!');
+                  alert("CSV import functionality coming soon!");
                 }}
                 className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
@@ -63,8 +65,8 @@ export default function Home() {
               </button>
               <button
                 onClick={() => {
-                  localStorage.removeItem('user');
-                  router.push('/auth/signin');
+                  localStorage.removeItem("user");
+                  router.push("/auth/signin");
                 }}
                 className="px-4 py-2 text-sm font-medium text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               >
@@ -80,4 +82,4 @@ export default function Home() {
       </div>
     </main>
   );
-} 
+}
