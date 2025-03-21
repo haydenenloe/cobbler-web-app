@@ -49,7 +49,7 @@ function NetworkGraphContent() {
   const [nodes, setNodes] = useState<Node[]>([]);
   const [edges, setEdges] = useState<Edge[]>([]);
   const [contacts, setContacts] = useState([]);
-  const [connections, setConnections] = useState(DUMMY_CONNECTIONS);
+  const [connections, setConnections] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
   const [selectedContact, setSelectedContact] = useState<unknown | null>(null);
@@ -75,6 +75,25 @@ function NetworkGraphContent() {
     };
 
     fetchContacts();
+  }, []);
+
+  useEffect(() => {
+    const fetchConnections = async () => {
+      try {
+        const { data, error } = await supabase
+          .from("contact_connections")
+          .select(
+            "id, source_contact_id, target_contact_id, relationship_strength"
+          );
+
+        if (error) throw error;
+        if (data) setConnections(data);
+      } catch (err) {
+        console.error("Error fetching contact connections:", err);
+      }
+    };
+
+    fetchConnections();
   }, []);
 
   useEffect(() => {

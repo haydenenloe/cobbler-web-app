@@ -38,9 +38,16 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-8">
-              <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-                Contact Network
-              </h1>
+              <img
+                src="https://i.postimg.cc/xXfYX8s4/logo.png"
+                alt="Cobbler Logo Image"
+                style={{ height: 50 }}
+              />
+              <img
+                src="https://i.postimg.cc/gxgp8pQk/whitebackground.png"
+                alt="Cobbler Logo Text"
+                style={{ height: 50 }}
+              />
               <div className="flex items-center space-x-4">
                 <div className="text-sm text-gray-600">
                   <span className="font-medium">User:</span>{" "}
