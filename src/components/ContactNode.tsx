@@ -42,7 +42,12 @@ const ContactNode = memo(({ data }: { data: ContactNodeData }) => {
       <Handle type="target" position={Position.Left} className="w-2 h-2" />
 
       <div className="flex items-center space-x-2">
-        <UserCircleIcon className="w-6 h-6 text-gray-500" />
+        {/* <UserCircleIcon className="w-6 h-6 text-gray-500" /> */}
+        <img
+          src="https://i.postimg.cc/qNSCTGFX/5.png"
+          alt=""
+          style={{ height: 30 }}
+        />
         <div>
           <div className="font-medium text-sm">{name}</div>
           {title && <div className="text-xs text-gray-500">{title}</div>}
