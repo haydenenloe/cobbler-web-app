@@ -1,40 +1,20 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Cobbler Landing Page
 
-## Getting Started
+The **Cobbler Landing Page** is a modern, responsive web application built with **Next.js** and styled using **Tailwind CSS**. It serves as the entry point for the Cobbler platform, showcasing its features, providing an introduction to the product, and allowing users to sign up or learn more.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Hero Section**: A visually appealing introduction to the Cobbler platform.
+- **Demo Videos**: Embedded videos (`cobbler_demo.mp4` and `cobbler_intro_video.mp4`) to showcase the product in action.
+- **QR Code Integration**: Includes QR codes (`cobbler_qr_code_black.png` and `cobbler_qr_code_green.png`) for easy access to the platform.
+- **Reusable Components**: Modular design with components for the header, about section, demo, intro, and signup.
+- **Responsive Design**: Fully responsive layout optimized for desktop and mobile devices.
+- **Optimized Performance**: Built with Next.js's Turbopack for fast development and production builds.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- **Framework**: [Next.js](https://nextjs.org) (v15.2.1)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com) (v4.0.12)
+- **Language**: [TypeScript](https://www.typescriptlang.org) (v5.0.0)
+- **Icons**: [Tabler Icons](https://tabler-icons.io) (v3.31.0)
+- **Scrolling**: [React Scroll](https://github.com/fisshy/react-scroll) (v1.9.3)
