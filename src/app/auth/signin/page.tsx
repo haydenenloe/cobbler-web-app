@@ -1,32 +1,35 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function SignIn() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError('');
+    setError("");
 
     try {
       // For demo purposes, accept any username/password
-      localStorage.setItem('user', JSON.stringify({
-        id: 'demo-user',
-        username,
-        email: `${username}@example.com`,
-      }));
+      localStorage.setItem(
+        "user",
+        JSON.stringify({
+          id: "demo-user",
+          username,
+          email: `${username}@example.com`,
+        })
+      );
 
-      router.push('/');
+      router.push("/");
     } catch (err) {
-      setError('Failed to sign in. Please try again.');
+      setError("Failed to sign in. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -87,7 +90,7 @@ export default function SignIn() {
               disabled={isLoading}
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50"
             >
-              {isLoading ? 'Signing in...' : 'Sign in'}
+              {isLoading ? "Signing in..." : "Sign in"}
             </button>
           </div>
 
@@ -96,7 +99,7 @@ export default function SignIn() {
               href="/auth/signup"
               className="font-medium text-blue-600 hover:text-blue-500"
             >
-              Don't have an account? Sign up
+              Don&apos;t have an account? Sign up
             </Link>
           </div>
         </form>

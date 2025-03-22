@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState } from "react";
 import ReactFlow, {
   Background,
   Controls,
@@ -13,13 +13,17 @@ import ReactFlow, {
   useEdgesState,
   Panel,
   Node,
-} from 'reactflow';
-import 'reactflow/dist/style.css';
-import { ContactNode, ContactEdge, NetworkState, ContactNodeData, ContactEdgeData } from '@/types/network';
-import ContactNodeComponent from './ContactNode';
-import NetworkEdge from './NetworkEdge';
-import SearchPanel from './SearchPanel';
-import ContactModal from './ContactModal';
+} from "reactflow";
+import "reactflow/dist/style.css";
+import {
+  NetworkState,
+  ContactNodeData,
+  ContactEdgeData,
+} from "@/types/network";
+import ContactNodeComponent from "./ContactNode";
+import NetworkEdge from "./NetworkEdge";
+import SearchPanel from "./SearchPanel";
+import ContactModal from "./ContactModal";
 
 const nodeTypes: NodeTypes = {
   contact: ContactNodeComponent,
@@ -34,8 +38,12 @@ interface NetworkGraphProps {
 }
 
 export default function NetworkGraph({ initialData }: NetworkGraphProps) {
-  const [nodes, setNodes, onNodesChange] = useNodesState<ContactNodeData>(initialData.nodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState<ContactEdgeData>(initialData.edges);
+  const [nodes, setNodes, onNodesChange] = useNodesState<ContactNodeData>(
+    initialData.nodes
+  );
+  const [edges, setEdges, onEdgesChange] = useEdgesState<ContactEdgeData>(
+    initialData.edges
+  );
   const [selectedContact, setSelectedContact] = useState<string | null>(null);
 
   const onConnect = useCallback(
@@ -44,11 +52,11 @@ export default function NetworkGraph({ initialData }: NetworkGraphProps) {
         const newEdge: Edge<ContactEdgeData> = {
           ...connection,
           id: `${connection.source}-${connection.target}`,
-          source: connection.source || '',
-          target: connection.target || '',
-          type: 'contact',
+          source: connection.source || "",
+          target: connection.target || "",
+          type: "contact",
           data: {
-            relationshipStrength: 'weak',
+            relationshipStrength: "weak",
           },
         };
         return [...eds, newEdge];
@@ -57,7 +65,10 @@ export default function NetworkGraph({ initialData }: NetworkGraphProps) {
     [setEdges]
   );
 
-  const handleNodeClick = (_: React.MouseEvent, node: Node<ContactNodeData>) => {
+  const handleNodeClick = (
+    _: React.MouseEvent,
+    node: Node<ContactNodeData>
+  ) => {
     setSelectedContact(node.id);
   };
 
@@ -81,7 +92,7 @@ export default function NetworkGraph({ initialData }: NetworkGraphProps) {
         <MiniMap />
         <Background />
       </ReactFlow>
-      
+
       {selectedContact && (
         <ContactModal
           contactId={selectedContact}
@@ -92,4 +103,4 @@ export default function NetworkGraph({ initialData }: NetworkGraphProps) {
       )}
     </div>
   );
-} 
+}
